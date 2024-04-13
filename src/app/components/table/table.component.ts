@@ -46,18 +46,18 @@ export class TableComponent implements OnInit {
     switchLanguage(selectedLanguage: string = 'en') {
         const direction = selectedLanguage === 'ar' ? 'rtl' : 'ltr';
         this.document.body.dir = direction;
-        selectedLanguage === 'en' ? this.customerService.getCustomersLarge().then((x: Customer[]) => (this.customers = x )) : this.customerServiceAr.getCustomersLarge().then((x: Customer[]) => (this.customers = x ));
+        selectedLanguage === 'en' ? this.customerService.getCustomersLarge().then((x: Customer[]) => (this.customers = x)) : this.customerServiceAr.getCustomersLarge().then((x: Customer[]) => (this.customers = x));
         this.translate.use(selectedLanguage); // Change the active language
     }
     onInputChange(event: Event) {
         const inputValue = (event.target as HTMLInputElement).value;
         this.dt.filterGlobal(inputValue, 'contains');
-      }
+    }
     ngOnInit() {
         this.formGroup = new FormGroup({
             value: new FormControl('on')
         });
-        this.customerService.getCustomersLarge().then((x: Customer[]) => (this.customers = x ));
+        this.customerService.getCustomersLarge().then((x: Customer[]) => (this.customers = x));
     }
 
     next() {

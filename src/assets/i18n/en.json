@@ -30,5 +30,10 @@
     "userNumber":"User Number",
     "watchNumber": "Watch Number",
     "watchNumberValue":"One Time",
-    "ticketName":"ticket"
+    "ticketName":"ticket",
+    "inputPlaceholder":"Search Here",
+    "activeTicket":"Active",
+    "bookTicket":"Book New Ticket",
+    "editHeader":"Edit",
+    "ticketNumber":"Ticket Number"
 }

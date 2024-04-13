@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { bootstrapCart4, bootstrapTrash3, bootstrapInfoCircleFill, bootstrapList, bootstrapCopy } from '@ng-icons/bootstrap-icons';
+import { bootstrapCart4, bootstrapTrash3, bootstrapInfoCircleFill, bootstrapList, bootstrapCopy, bootstrapSliders } from '@ng-icons/bootstrap-icons';
 import { NgIconsModule } from '@ng-icons/core';
 import { cssAdd } from '@ng-icons/css.gg';
 import { ChartComponent } from './components/chart/chart.component';
@@ -27,6 +27,13 @@ import { NgxApexchartsModule } from 'ngx-apexcharts';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { iconoirDownloadSquare } from '@ng-icons/iconoir';
+
+import { HeaderComponent } from './components/header/header.component';
+import { remixEditBoxLine } from '@ng-icons/remixicon';
+
+
+
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -37,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CartComponent,
     TableComponent,
     CopyComponent,
+    HeaderComponent,
     
   ],
   imports: [
@@ -55,7 +63,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgxApexchartsModule,
     ReactiveFormsModule,
     SelectButtonModule,
-    NgIconsModule.withIcons({ bootstrapCart4, bootstrapTrash3, bootstrapInfoCircleFill,bootstrapList,cssAdd,bootstrapCopy,iconoirDownloadSquare}),
+    NgIconsModule.withIcons({ remixEditBoxLine,bootstrapSliders,bootstrapCart4, bootstrapTrash3, bootstrapInfoCircleFill,bootstrapList,cssAdd,bootstrapCopy,iconoirDownloadSquare}),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

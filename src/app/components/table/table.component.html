@@ -3,9 +3,10 @@
     <option value="ar">Arabic</option>
 </select> -->
 <div class="d-flex justify-content-center" [dir]="'ltr'">
-    <form [formGroup]="formGroup">
+    <form [formGroup]="formGroup" class="my-2">
         <p-selectButton [options]="stateOptions" formControlName="value" optionLabel="label" optionValue="value"
-            [(ngModel)]="selectedLanguage" (ngModelChange)="switchLanguage($event)"></p-selectButton>
+            [(ngModel)]="selectedLanguage" (ngModelChange)="switchLanguage($event)">
+        </p-selectButton>
     </form>
 </div>
 
@@ -13,18 +14,47 @@
     <p-table #dt [value]="customers" [paginator]="true" [rows]="5" [first]="first"
         [tableStyle]="{ 'min-width': '30rem' }"
         [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
-        currentPageReportTemplate="{{'showing' | translate }} {first} {{'to' | translate }} {last} {{'of' | translate }} {totalRecords} {{'entities' | translate }}" [showCurrentPageReport]="true"
-        (onPage)="pageChange($event)" [rowsPerPageOptions]="[5, 10,15,20,30, 50]" (sortFunction)="customSort($event)"
-        [customSort]="true">
-        <ng-template pTemplate="caption">
+        currentPageReportTemplate="{{'showing' | translate }} {first} {{'to' | translate }} {last} {{'of' | translate }} {totalRecords} {{'entities' | translate }}"
+        [showCurrentPageReport]="true" (onPage)="pageChange($event)" [rowsPerPageOptions]="[5, 10,15,20,30, 50]"
+        (sortFunction)="customSort($event)" [customSort]="true">
+        <!-- <ng-template pTemplate="caption">
             <div class="d-flex justify-content-between">
                 <div class="flex justify-content-center align-items-center gap-2 mb-3">
                     <p-inputSwitch inputId="metakey" [(ngModel)]="metaKeySelection" label="MetaKey"></p-inputSwitch>
                 </div>
-                <span class="p-input-icon-left">
+                <span class="p-input-icon-left ml-auto">
                     <i class="pi pi-search"></i>
                     <input p-inputText  type="text" placeholder="Enter text..." (input)="onInputChange($event)" />
                 </span>
+            </div>
+        </ng-template> -->
+        <ng-template pTemplate="caption">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <span class="p-input-icon-left d-flex align-items-center justify-content-between w-full">
+                        <i class="pi pi-search align-items-center"></i>
+                        <input p-inputText class="form-control focus-ring focus-ring-secondary" type="text"
+                            placeholder="{{'inputPlaceholder'|translate}}" (input)="onInputChange($event)" />
+                    </span>
+                    <div class="p-2 mx-1 border border-1 filterIcon ">
+                        <ng-icon name="bootstrapSliders" class="img-fluid rounded"></ng-icon>
+                    </div>
+                    <div class="p-2 mx-1 border border-1 filterIcon ">
+                        <i class="pi pi-sort-alt align-items-center"></i>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        </div>
+                        <span class="mx-1">{{'activeTicket'|translate}}</span>
+                    </div>
+                    <div class="bookTicket d-none d-md-block">
+                        <span>{{'bookTicket'|translate}}</span>
+                    </div>
+                </div>
             </div>
         </ng-template>
         <ng-template pTemplate="header">

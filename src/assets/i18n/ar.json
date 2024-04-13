@@ -31,5 +31,11 @@
     "userNumber":"عدد الاشخاص",
     "watchNumber": "عدد مرات المشاهدة",
     "watchNumberValue":"مرة واحدة",
-    "ticketName":"التذكرة"
+    "ticketName":"التذكرة",
+    "inputPlaceholder":"البحث",
+    "activeTicket":"مفعلة",
+    "bookTicket":"حجز تذكرة جديدة",
+    "editHeader":"تعديل",
+    "ticketNumber":"تذكرة رقم"
+
 }

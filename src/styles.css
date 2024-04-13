@@ -3,6 +3,7 @@
 @import "primeng/resources/primeng.css";
 
 
+
 @import "primeicons/primeicons.css";
 @font-face {
     font-family: 'Neo Sans Arabic';
@@ -17,8 +18,7 @@
     /* Add more src lines if you have different font formats */
 }
 
-body,
-body .p-component{
+body{
     font-family: 'Neo Sans Arabic','Inter' !important;  /* Fallback fonts */
     background-color: #F3F5F7 !important;
 }
